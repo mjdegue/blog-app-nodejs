@@ -1,0 +1,29 @@
+{
+	"folders": [
+		{
+			"path": "."
+		}
+	],
+	"settings": {
+		"editor.formatOnPaste": true,
+		"editor.formatOnSave": true,
+		"[html]": {
+			"editor.defaultFormatter": "esbenp.prettier-vscode"
+		},
+		"[javascript]": {
+			"editor.defaultFormatter": "esbenp.prettier-vscode"
+		}
+	},
+	"extensions": {
+		"recommendations": [
+			"hossaini.bootstrap-intellisense",
+			"mohd-akram.vscode-html-format",
+			"donjayamanne.jquerysnippets",
+			"ms-vscode.live-server",
+			"esbenp.prettier-vscode",
+			"vscode-icons-team.vscode-icons",
+			"ecmel.vscode-html-css",
+			"digitalbrainstem.javascript-ejs-support"
+		]
+	}
+}

@@ -1,0 +1,23 @@
+{
+  "name": "blog-app-nodejs",
+  "version": "0.1.0",
+  "description": "A project to learn nodejs properly",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mjdegue/blog-app-nodejs.git"
+  },
+  "author": "Maximiliano Degue",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mjdegue/blog-app-nodejs/issues"
+  },
+  "homepage": "https://github.com/mjdegue/blog-app-nodejs#readme",
+  "dependencies": {
+    "express": "^5.1.0"
+  }
+}
