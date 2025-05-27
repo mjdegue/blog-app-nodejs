@@ -5,10 +5,10 @@ const Config = {
 }
 
 const app = express();
-
+app.use(express.static("public"));
 
 app.get("/", (req, res) => {
-    res.send("<h1>Hello, world!</h1>");
+    res.render("index.ejs");
 });
 
 app.listen(Config.PORT, (err) => {
@@ -18,4 +18,4 @@ app.listen(Config.PORT, (err) => {
     }
 
     console.log(`Server Ready: http://localhost:${Config.PORT}/`);
-})
+});
