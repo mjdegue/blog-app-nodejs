@@ -1,10 +1,32 @@
 <%- include("partials/header.ejs") %>
 
-<form action="submit" method="post">
+<form action="submit-post" method="post">
+  <section hidden name="hidden-info">
+    <% if (locals.postId) { %>
+      <input name="post-id" value= <%=postId%>>
+    <%}%>
+  </section>
   <div class="input-group p-5" style="height: 300px; width: 100%;">
-    <span class="input-group-text">With textarea</span>
-    <textarea type="text" name="text-value" placeholder="Your fantastic post" class="form-control" aria-label="With textarea"></textarea>
-    <button type="submit" class="btn btn-success">Success</button>
+    <div class="container">
+      <div class="row">
+        <span class="input-group-text col-auto">Post Title: </span>
+        <input class="form-control col" type="text" name="postTitle" placeholder="Great Title"  aria-label="With textarea"><%=locals.postTitle%></input>
+      </div>
+      <div class="row my-2">
+        <textarea type="text" name="postText" placeholder="Your fantastic post" class="form-control" aria-label="With textarea" style="height: 150px;"><%=locals.postText%></textarea>
+      </div>
+      <div class="row my-2">
+        <button type="submit-post" class="btn btn-success col-auto me-2">
+          <% if (locals.isEdit) {%>
+            Update post
+          <%} else {%>
+            Create Post
+          <%}%>
+        </button>
+        <button href="/" class="btn btn-danger col-auto">Abort</button>
+      </div>
+    </div>
+
   </div>
 </form>
 

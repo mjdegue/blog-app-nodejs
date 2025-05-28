@@ -1,3 +1,15 @@
 <%- include("partials/header.ejs") %>
-<h1>Hello world</h1>
+<h1>Welcome to this fantastic blog.</h1>
+<%if (locals.postsList) {%>
+  <h2>Here is a list of posts you might be interested in: </h2>
+  <ul>
+    <% postsList.forEach((post) => {%>
+        <li><a href="/read-post?postId=<%=post.postId%>"><%=post.postTitle%></a></li>
+    <%});%>
+  </ul>
+<%} else {%>
+  <h2>There are no posts yet, why don't you create the first?</h2>
+<%}%>
+
+
 <%- include("partials/footer.ejs") %>
