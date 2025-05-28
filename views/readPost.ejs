@@ -2,7 +2,7 @@
 
 <section hidden name="hidden-info">
   <% if (locals.postId) { %>
-    <input name="post-id" value= <%=postId%>>
+    <input name="postId" value= <%=postId%>>
   <%}%>
 </section>
 <div class="input-group p-5" style="height: 300px; width: 100%;">
@@ -16,18 +16,6 @@
         <p><%=postData.content%></p>
       </div>
     </div>
-    <!--
-    <div class="row my-2">
-      <button type="submit-post" class="btn btn-success col-auto me-2">
-        <% if (locals.isEdit) {%>
-          Update post
-        <%} else {%>
-          Create Post
-        <%}%>
-      </button>
-      <button href="/" class="btn btn-danger col-auto">Abort</button>
-    </div>
-    -->
   </div>
 </div>
 

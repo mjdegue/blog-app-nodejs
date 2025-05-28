@@ -1,4 +1,5 @@
 <%- include("partials/header.ejs") %>
+<div class="container-fluid py-2 px-5 grey-background">
 <h1>Welcome to this fantastic blog.</h1>
 <%if (locals.postsList) {%>
   <h2>Here is a list of posts you might be interested in: </h2>
@@ -10,6 +11,6 @@
 <%} else {%>
   <h2>There are no posts yet, why don't you create the first?</h2>
 <%}%>
-
+</div>
 
 <%- include("partials/footer.ejs") %>

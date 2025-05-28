@@ -5,12 +5,16 @@ import { Config } from "./config.js";
 const CONTENT_DIR = Config.ROOT_DIR + "/content/";
 const POST_ID_FILE = "next_post_id.txt";
 console.log(CONTENT_DIR);
-export function createNewPost(postTitle, postText) {
-  const nextId = getNextPostId();
+export function writePost(inPostId, postTitle, postText) {
+  const postId = inPostId != null ? inPostId : getNextPostId();
   fs.writeFileSync(
-    `${CONTENT_DIR}/${nextId}.txt`,
-    JSON.stringify({ id: nextId, title: postTitle, content: postText })
+    `${CONTENT_DIR}/${postId}.txt`,
+    JSON.stringify({ id: postId, title: postTitle, content: postText })
   );
+}
+
+export function deletePost(inPostId) {
+  fs.unlinkSync(`${CONTENT_DIR}${inPostId}.txt`);
 }
 
 function getNextPostId() {

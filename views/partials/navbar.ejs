@@ -35,7 +35,7 @@
             <a class="nav-link active" aria-current="page" href="/">Home</a>
           </li>
           <li class="nav-item"><a class="btn btn-primary" href="/create"> Create Post </a></li>
-          <% if (locals.isPost) {%>
+          <% if (locals.postData && !locals.isEditing) {%>
           <li class="nav-item dropdown">
             <a
               class="nav-link dropdown-toggle"
@@ -44,26 +44,32 @@
               data-bs-toggle="dropdown"
               aria-expanded="false"
             >
-              Dropdown
+              Posts Actions
             </a>
             <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="#">Action</a></li>
-              <li><a class="dropdown-item" href="#">Another action</a></li>
-              <li><hr class="dropdown-divider" /></li>
-              <li><a class="dropdown-item" href="#">Something else here</a></li>
+              <form action="edit-post" method="post">
+                <section hidden name="hidden-info">
+                  <% if (locals.postData) { %>
+                    <input name="postId" value= <%=postData.id%>>
+                  <%}%>
+                </section>
+                <li>
+                  <button class="dropdown-item btn btn-success" href="edit-post">Edit Post</button>
+                </li>
+              </form>
+              <form action="delete-post" method="post">
+                <section hidden name="hidden-info">
+                  <% if (locals.postData) { %>
+                    <input name="postId" value= <%=postData.id%>>
+                  <%}%>
+                </section>
+              <li><button class="dropdown-item" href="delete-post">Delete Post</button></li>
+              </form>
             </ul>
           </li>
           <%}%>
         </ul>
-        <form class="d-flex mt-3 mt-lg-0" role="search">
-          <input
-            class="form-control me-2"
-            type="search"
-            placeholder="Search"
-            aria-label="Search"
-          />
-          <button class="btn btn-outline-success" type="submit">Search</button>
-        </form>
+        
       </div>
     </div>
   </div>

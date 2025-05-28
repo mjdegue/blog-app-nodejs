@@ -1,11 +1,12 @@
-import { createNewPost } from "./blogFileManager.js";
+import { writePost, deletePost } from "./blogFileManager.js";
 
 export function submitPostMiddleware(req, res, next) {
-  if (req.body.postId != null) {
-    // Here we update the post.
-    return;
-  }
-  createNewPost(req.body.postTitle, req.body.postText);
+  writePost(req.body.postId, req.body.postTitle, req.body.postText);
 
+  next();
+}
+
+export function deletePostMiddleware(req, res, next) {
+  deletePost(req.body.postId);
   next();
 }
